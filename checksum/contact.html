@@ -11,8 +11,14 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <title>Checksum Global Solutions</title>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script type="text/javascript">
+      function addDate() {
+        var today = new Date();
+        document.getElementById("mailSubject").value =today.toString();
+      }
+    </script>
   </head>
-  <body>
+  <body onload="addDate();">
     <!-- Navigation -->
     <div class="container nav-cont">
     <div class="row nav-bar">
@@ -30,9 +36,6 @@
                 <a class="nav-link" href="#">Contact</a>
               </li>
             </ul>
-            <!--<span class="navbar-text">
-              Navbar text with an inline element
-            </span>-->
           </div>
         </nav>
     </div>
@@ -40,13 +43,9 @@
 
   <div class="container-fluid promo-banner" style="width: 100%;background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('img/contact.jpg') no-repeat center center; height: 300px;">
     <div class="row promo-banner" style="margin-left: 3%;">
-  <!-- Promocontent -->  
-    <h1 class="main-title" style="color:#FFF;">Contact Us</h1>
-    <!--<h4 class="sub-title" style="color:#FFF; margin-right: 3%;">We help organizations to design and implement polices, procedures, processes, supporting technologies and governance frameworks required to manage, protect and leverage their information resources.</h4>
-    <button type="button" class="btn btn-dark main-cta">Contact Us</button>-->
+        <h1 class="main-title" style="color:#FFF;">Contact Us</h1>
     </div>
   </div> <!-- Nav clos -->
-  <!--<hr class="divider"></hr>-->
 
   <!-- features-->
   <div class="container features border-top">
@@ -78,6 +77,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
           <input type="hidden" name="_next" value="checksum/thanks.html" />
+          <input type="hidden" name="_subject" id="mailSubject" value=""/>
         </form>
       </div>
     </div>

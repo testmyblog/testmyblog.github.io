@@ -11,8 +11,14 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <title>Checksum Global Solutions</title>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script type="text/javascript">
+      function addDate() {
+        var today = new Date();
+        document.getElementById("mailSubject").value =today.toString();
+      }
+    </script>
   </head>
-  <body>
+  <body onload="addDate();">
     <!-- Navigation -->
     <div class="container nav-cont">
     <div class="row nav-bar">
@@ -24,37 +30,55 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="#">Contact</a>
               </li>
             </ul>
-            <!--<span class="navbar-text">
-              Navbar text with an inline element
-            </span>-->
           </div>
         </nav>
     </div>
   </div> <!-- Navigation -->
 
-  <div class="container-fluid promo-banner" style="width: 100%;background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('img/about.jpg') no-repeat center center; height: 300px;">
+  <div class="container-fluid promo-banner" style="width: 100%;background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('img/contact.jpg') no-repeat center center; height: 300px;">
     <div class="row promo-banner" style="margin-left: 3%;">
-  <!-- Promocontent -->  
-    <h1 class="main-title" style="color:#FFF;">About Us</h1>
-    <!--<h4 class="sub-title" style="color:#FFF; margin-right: 3%;">We help organizations to design and implement polices, procedures, processes, supporting technologies and governance frameworks required to manage, protect and leverage their information resources.</h4>
-    <button type="button" class="btn btn-dark main-cta">Contact Us</button>-->
+        <h1 class="main-title" style="color:#FFF;">Contact Us</h1>
     </div>
   </div> <!-- Nav clos -->
-  <!--<hr class="divider"></hr>-->
 
   <!-- features-->
   <div class="container features border-top">
     <div class="row features">
       <div class="col-sm-12"  style="text-align: justify;">
-        <p>Checksum Global Solutions FZE is premium technology partner that helps organizations source the most advanced solutions from a competitive marketplace. As the focus shift from technology to information, it is becoming increasingly important for organizations to take advantage of their business information and translate them to actionable information. Checksum helps organizations to design and implement polices, procedures, processes, supporting technologies and governance frameworks required to manage, protect and leverage their information resources. Our experience & expertise helps us offer our customers an unrivalled product portfolio coupled with competitive pricing and high quality service delivery.</p>
-        <p>Checksum Global Solutions primarily focuses on the following sectors: Telecom, Retail, Banking and Government. We combine the local expertise of our people with our diverse experience as an organisation across markets, geographies and industries to provide an unparalleled service to small, medium and large organizations in the private and public sectors. Carefully chosen industries, specific verticals and future ready technology like Big data Analytics, Robotics & artificial intelligence makes this organisations unique.</p>
-        <p>Checksum’s development arm, Macrolytics, is a full-fledged production house with the capability to deliver solutions that can help organisations focus on growth and position themselves competitvely with a view to the future, all the while keeping a tight control over costs. Our in-house team will pick, choose & deliver world-class solutions from our global network across geographies.</p>
+        <form name="cform" id="cform" method="POST" action="https://formspree.io/joby19dec@gmail.com">
+          <h4>Please fill the form below and we will get back to you</h4>
+          <p></br></p>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter you full name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="_replyto" placeholder="Enter your email">
+            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="organization">Organization</label>
+            <input type="text" class="form-control" name="organization" placeholder="Enter the name of your organization">
+          </div>
+          <div class="form-group">
+            <label for="website">Website</label>
+            <input type="text" class="form-control" name="website" placeholder="Enter your organization's website">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" name="description" rows="7" placeholder="What type of service are you looking for?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <input type="hidden" name="_next" value="thanks.html" />
+          <input type="hidden" name="_subject" id="mailSubject" value=""/>
+        </form>
       </div>
     </div>
   </div> <!-- Features -->
